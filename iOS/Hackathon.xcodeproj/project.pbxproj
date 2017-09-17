@@ -11,7 +11,37 @@
 		3CBDA7301F6DBC9A00F96A46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */; };
 		3CBDA7351F6DBC9A00F96A46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBDA7341F6DBC9A00F96A46 /* Assets.xcassets */; };
 		3CBDA7381F6DBC9A00F96A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CBDA7361F6DBC9A00F96A46 /* LaunchScreen.storyboard */; };
+		3CBDA7561F6E0CEF00F96A46 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7551F6E0CEF00F96A46 /* CameraViewController.swift */; };
+		3CBDA7581F6E1B7800F96A46 /* ImageOCRResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7571F6E1B7800F96A46 /* ImageOCRResult.swift */; };
+		3CBDA76A1F6E252100F96A46 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBDA7691F6E252100F96A46 /* libz.tbd */; };
+		3CBDA76C1F6E264700F96A46 /* TesseractOCR.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CBDA76D1F6E264A00F96A46 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */; };
+		3CBDA76F1F6E269B00F96A46 /* tessdata in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CBDA7671F6E24CD00F96A46 /* tessdata */; };
+		3CBDA7721F6E2F1100F96A46 /* ParkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7711F6E2F1100F96A46 /* ParkState.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3CBDA75E1F6E226B00F96A46 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3CBDA76C1F6E264700F96A46 /* TesseractOCR.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CBDA76E1F6E269200F96A46 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				3CBDA76F1F6E269B00F96A46 /* tessdata in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3CBDA7281F6DBC9A00F96A46 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +50,12 @@
 		3CBDA7341F6DBC9A00F96A46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CBDA7371F6DBC9A00F96A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CBDA7391F6DBC9A00F96A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CBDA7551F6E0CEF00F96A46 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		3CBDA7571F6E1B7800F96A46 /* ImageOCRResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOCRResult.swift; sourceTree = "<group>"; };
+		3CBDA7671F6E24CD00F96A46 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		3CBDA7691F6E252100F96A46 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		3CBDA7711F6E2F1100F96A46 /* ParkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBDA76A1F6E252100F96A46 /* libz.tbd in Frameworks */,
+				3CBDA76D1F6E264A00F96A46 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +76,7 @@
 			children = (
 				3CBDA72A1F6DBC9A00F96A46 /* Hackathon */,
 				3CBDA7291F6DBC9A00F96A46 /* Products */,
+				3CBDA75C1F6E226600F96A46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,13 +91,26 @@
 		3CBDA72A1F6DBC9A00F96A46 /* Hackathon */ = {
 			isa = PBXGroup;
 			children = (
+				3CBDA7671F6E24CD00F96A46 /* tessdata */,
+				3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */,
 				3CBDA72B1F6DBC9A00F96A46 /* AppDelegate.swift */,
 				3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */,
 				3CBDA7341F6DBC9A00F96A46 /* Assets.xcassets */,
 				3CBDA7361F6DBC9A00F96A46 /* LaunchScreen.storyboard */,
 				3CBDA7391F6DBC9A00F96A46 /* Info.plist */,
+				3CBDA7551F6E0CEF00F96A46 /* CameraViewController.swift */,
+				3CBDA7571F6E1B7800F96A46 /* ImageOCRResult.swift */,
+				3CBDA7711F6E2F1100F96A46 /* ParkState.swift */,
 			);
 			path = Hackathon;
+			sourceTree = "<group>";
+		};
+		3CBDA75C1F6E226600F96A46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CBDA7691F6E252100F96A46 /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +123,8 @@
 				3CBDA7241F6DBC9A00F96A46 /* Sources */,
 				3CBDA7251F6DBC9A00F96A46 /* Frameworks */,
 				3CBDA7261F6DBC9A00F96A46 /* Resources */,
+				3CBDA75E1F6E226B00F96A46 /* CopyFiles */,
+				3CBDA76E1F6E269200F96A46 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -133,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CBDA7301F6DBC9A00F96A46 /* ViewController.swift in Sources */,
+				3CBDA7581F6E1B7800F96A46 /* ImageOCRResult.swift in Sources */,
 				3CBDA72C1F6DBC9A00F96A46 /* AppDelegate.swift in Sources */,
+				3CBDA7721F6E2F1100F96A46 /* ParkState.swift in Sources */,
+				3CBDA7561F6E0CEF00F96A46 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,8 +321,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8DZBD3K9C;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Hackathon",
+				);
 				INFOPLIST_FILE = Hackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techcrunch.Hackathon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -279,8 +342,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8DZBD3K9C;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Hackathon",
+				);
 				INFOPLIST_FILE = Hackathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techcrunch.Hackathon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
