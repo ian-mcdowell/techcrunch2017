@@ -12,14 +12,13 @@ class MainScreenViewController: UIViewController {
 
     @IBOutlet weak var insideView: UIView!
     @IBOutlet weak var snapImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let logoView = UIImageView(image: #imageLiteral(resourceName: "pr_logo"))
- 
         logoView.contentMode = .scaleAspectFit
         navigationItem.titleView = logoView
-        
         
         insideView.layer.borderColor = UIColor.lightGray.cgColor
         
