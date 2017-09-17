@@ -53,6 +53,18 @@ enum DayOfWeek: String, CustomStringConvertible, Comparable {
         }
     }
     
+    static var now: DayOfWeek {
+        let now = Date()
+        let calendar = Calendar.current
+        let currentDay = calendar.component(.weekday, from: now)
+        for day in [DayOfWeek.mon, .tue, .wed, .thu, .fri, .sat, .sun] {
+            if day.order == currentDay {
+                return day
+            }
+        }
+        fatalError("Invalid calendar day")
+    }
+    
     static func <(lhs: DayOfWeek, rhs: DayOfWeek) -> Bool {
         return lhs.order < rhs.order
     }
@@ -165,11 +177,12 @@ enum ParkState {
         }
         
         // Check if we are inside the time range
-        
-        
+        if !days.containsDay(day: DayOfWeek.now) {
+            self = .cantPark(reason: "You can only park here \(days.description).", metadata: metadata)
+            return
+        }
         
         self = .goodToPark(timeRemaining: duration, metadata: metadata)
-        
         
         // MARK: END Hackiest hackathon project code ever
     }
