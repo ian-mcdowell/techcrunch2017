@@ -25,22 +25,14 @@ class MainScreenViewController: UIViewController {
         snapImageView.image = snapImageView.image!.withRenderingMode(.alwaysTemplate)
         snapImageView.tintColor = UIColor.lightGray
         // Do any additional setup after loading the view.
+        
+        snapImageView.isUserInteractionEnabled = true
+        snapImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped)))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @objc private func tapped() {
+        let vc = CameraViewController()
+        self.present(vc, animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
