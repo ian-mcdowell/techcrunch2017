@@ -31,7 +31,7 @@ class ARNavigationViewController: UIViewController, SceneLocationViewDelegate {
         sceneLocationView = SceneLocationView()
         infoLabel = UILabel()
         
-        let image = UIImage(named: "pin")!
+        let image = UIImage(named: "arpin")!
         pinNode = LocationAnnotationNode(location: location, image: image)
         
         mapVC = MapViewController(location: location)
@@ -102,7 +102,7 @@ class ARNavigationViewController: UIViewController, SceneLocationViewDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let image = UIImage(named: "pin")!
+        let image = UIImage(named: "arpin")!
         let location = sceneLocationView.currentLocation()!
         pinNode = LocationAnnotationNode(location: location, image: image)
         pinNode.continuallyAdjustNodePositionWhenWithinRange = false
