@@ -41,6 +41,8 @@ class CameraViewController: UIViewController {
         prevLayer.connection?.videoOrientation = transformOrientation(orientation: UIApplication.shared.statusBarOrientation)
         
         view.layer.addSublayer(prevLayer)
+        
+        addDemo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +55,10 @@ class CameraViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         session.stopRunning()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     var recognizing: Bool = false {
@@ -80,20 +86,26 @@ class CameraViewController: UIViewController {
                     self.recognizing = false
                     
                     DispatchQueue.main.async {
-                        let alert = UIAlertController(
-                            title: "Result",
-                            message: String(describing: state),
-                            preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                            self.view.isUserInteractionEnabled = true
-                        }))
-                        self.present(alert, animated: true)
+                        self.showViewController(forState: state)
                     }
                 } else {
                     self.recognize()
                 }
             }
         }
+    }
+    
+    func showViewController(forState state: ParkState) {
+        recognizing = false
+        
+        let alert = UIAlertController(
+            title: "Result",
+            message: String(describing: state),
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.view.isUserInteractionEnabled = true
+        }))
+        self.present(alert, animated: true)
     }
     
     func captureImage(_ callback: @escaping (Data) -> Void) {
@@ -106,57 +118,7 @@ class CameraViewController: UIViewController {
             callback(imageData)
         }
     }
-    
-    @objc private func takePhoto() {
-        
-        view.isUserInteractionEnabled = false
-        
-        let videoConnection = self.output.connections.first(where: { $0.inputPorts.contains(where: { $0.mediaType == .video }) })!
-        videoConnection.videoOrientation = transformOrientation(orientation: UIApplication.shared.statusBarOrientation)
-        
-        output.captureStillImageAsynchronously(from: videoConnection) { buffer, error in
-            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer!)!
-            
-            DispatchQueue.global().async {
-                let group = DispatchGroup()
-                var tesseractResult: ImageOCRResult!
-//                var azureResult: ImageOCRResult!
-//
-//                group.enter()
-                group.enter()
-                self.tesseractOCR(imageData) { result in
-                    tesseractResult = result
-                    group.leave()
-                }
-//                self.azureOCR(imageData) { result in
-//                    azureResult = result
-//                    group.leave()
-//                }
-                
-                group.wait()
-                
-                let state = try! ParkState(tesseractOCR: tesseractResult)
-                
-                
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(
-                        title: "Result",
-                        message: """
-                            Tesseract: \(tesseractResult),
-                            Result: \(state)
-                         """,
-                        preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                        self.view.isUserInteractionEnabled = true
-                    }))
-                    self.present(alert, animated: true)
-                }
-            }
 
-            
-        }
-    }
-    
     func transformOrientation(orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {
         switch orientation {
         case .landscapeLeft:

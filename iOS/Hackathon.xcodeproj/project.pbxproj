@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CBDA72C1F6DBC9A00F96A46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA72B1F6DBC9A00F96A46 /* AppDelegate.swift */; };
-		3CBDA7301F6DBC9A00F96A46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */; };
+		3CBDA7301F6DBC9A00F96A46 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA72F1F6DBC9A00F96A46 /* MapViewController.swift */; };
 		3CBDA7381F6DBC9A00F96A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CBDA7361F6DBC9A00F96A46 /* LaunchScreen.storyboard */; };
 		3CBDA7561F6E0CEF00F96A46 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7551F6E0CEF00F96A46 /* CameraViewController.swift */; };
 		3CBDA7581F6E1B7800F96A46 /* ImageOCRResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7571F6E1B7800F96A46 /* ImageOCRResult.swift */; };
@@ -17,6 +17,18 @@
 		3CBDA76D1F6E264A00F96A46 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */; };
 		3CBDA76F1F6E269B00F96A46 /* tessdata in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CBDA7671F6E24CD00F96A46 /* tessdata */; };
 		3CBDA7721F6E2F1100F96A46 /* ParkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7711F6E2F1100F96A46 /* ParkState.swift */; };
+		3CBDA7741F6E65B700F96A46 /* CameraViewController+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7731F6E65B700F96A46 /* CameraViewController+Demo.swift */; };
+		3CBDA7801F6E6BDA00F96A46 /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7761F6E6BD000F96A46 /* SCNVector3+Extensions.swift */; };
+		3CBDA7811F6E6BDA00F96A46 /* SceneLocationEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7771F6E6BD000F96A46 /* SceneLocationEstimate.swift */; };
+		3CBDA7821F6E6BDA00F96A46 /* SceneLocationEstimate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7781F6E6BD000F96A46 /* SceneLocationEstimate+Extensions.swift */; };
+		3CBDA7831F6E6BDA00F96A46 /* FloatingPoint+Radians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7791F6E6BD000F96A46 /* FloatingPoint+Radians.swift */; };
+		3CBDA7841F6E6BDA00F96A46 /* LocationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA77A1F6E6BD000F96A46 /* LocationNode.swift */; };
+		3CBDA7851F6E6BDA00F96A46 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA77B1F6E6BD000F96A46 /* CGPoint+Extensions.swift */; };
+		3CBDA7861F6E6BDA00F96A46 /* CLLocation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA77C1F6E6BD000F96A46 /* CLLocation+Extensions.swift */; };
+		3CBDA7871F6E6BDA00F96A46 /* SceneLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA77D1F6E6BD000F96A46 /* SceneLocationView.swift */; };
+		3CBDA7881F6E6BDA00F96A46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA77E1F6E6BD000F96A46 /* LocationManager.swift */; };
+		3CBDA7891F6E6BDA00F96A46 /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA77F1F6E6BD000F96A46 /* SCNNode+Extensions.swift */; };
+		3CBDA78B1F6E6C0500F96A46 /* ARNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA78A1F6E6C0500F96A46 /* ARNavigationViewController.swift */; };
 		9B0DC8261F6E15B4005AC5B5 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */; };
 		9B3950B91F6E6BA600A3C013 /* FailedParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */; };
 		9B3950BB1F6E766D00A3C013 /* CurrentSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */; };
@@ -53,7 +65,7 @@
 /* Begin PBXFileReference section */
 		3CBDA7281F6DBC9A00F96A46 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBDA72B1F6DBC9A00F96A46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3CBDA72F1F6DBC9A00F96A46 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3CBDA7371F6DBC9A00F96A46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CBDA7391F6DBC9A00F96A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CBDA7551F6E0CEF00F96A46 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +74,18 @@
 		3CBDA7691F6E252100F96A46 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
 		3CBDA7711F6E2F1100F96A46 /* ParkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkState.swift; sourceTree = "<group>"; };
+		3CBDA7731F6E65B700F96A46 /* CameraViewController+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraViewController+Demo.swift"; sourceTree = "<group>"; };
+		3CBDA7761F6E6BD000F96A46 /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		3CBDA7771F6E6BD000F96A46 /* SceneLocationEstimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLocationEstimate.swift; sourceTree = "<group>"; };
+		3CBDA7781F6E6BD000F96A46 /* SceneLocationEstimate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneLocationEstimate+Extensions.swift"; sourceTree = "<group>"; };
+		3CBDA7791F6E6BD000F96A46 /* FloatingPoint+Radians.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Radians.swift"; sourceTree = "<group>"; };
+		3CBDA77A1F6E6BD000F96A46 /* LocationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNode.swift; sourceTree = "<group>"; };
+		3CBDA77B1F6E6BD000F96A46 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		3CBDA77C1F6E6BD000F96A46 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
+		3CBDA77D1F6E6BD000F96A46 /* SceneLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLocationView.swift; sourceTree = "<group>"; };
+		3CBDA77E1F6E6BD000F96A46 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3CBDA77F1F6E6BD000F96A46 /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
+		3CBDA78A1F6E6C0500F96A46 /* ARNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNavigationViewController.swift; sourceTree = "<group>"; };
 		9B09430E1F6E151E00309317 /* MapQuestMaps-3.2.1-1.3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "MapQuestMaps-3.2.1-1.3"; sourceTree = "<group>"; };
 		9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "Hackathon/MapQuestMaps-3.2.1-1.3/Mapbox.framework"; sourceTree = "<group>"; };
 		9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedParkingViewController.swift; sourceTree = "<group>"; };
@@ -111,17 +135,21 @@
 				3CBDA76B1F6E263100F96A46 /* TesseractOCR.framework */,
 				9B7E6BA71F6E467D0012A94E /* Assets.xcassets */,
 				9B09430E1F6E151E00309317 /* MapQuestMaps-3.2.1-1.3 */,
+				3CBDA7751F6E6BD000F96A46 /* ARKit+CoreLocation */,
 				3CBDA72B1F6DBC9A00F96A46 /* AppDelegate.swift */,
 				9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */,
 				3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */,
 				9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */,
+				3CBDA72F1F6DBC9A00F96A46 /* MapViewController.swift */,
 				9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */,
 				3CBDA7361F6DBC9A00F96A46 /* LaunchScreen.storyboard */,
 				3CBDA7391F6DBC9A00F96A46 /* Info.plist */,
 				3CBDA7551F6E0CEF00F96A46 /* CameraViewController.swift */,
+				3CBDA7731F6E65B700F96A46 /* CameraViewController+Demo.swift */,
 				3CBDA7571F6E1B7800F96A46 /* ImageOCRResult.swift */,
 				3CBDA7711F6E2F1100F96A46 /* ParkState.swift */,
 				9B7E6BA51F6E3C860012A94E /* main.storyboard */,
+				3CBDA78A1F6E6C0500F96A46 /* ARNavigationViewController.swift */,
 			);
 			path = Hackathon;
 			sourceTree = "<group>";
@@ -133,6 +161,23 @@
 				9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CBDA7751F6E6BD000F96A46 /* ARKit+CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3CBDA7761F6E6BD000F96A46 /* SCNVector3+Extensions.swift */,
+				3CBDA7771F6E6BD000F96A46 /* SceneLocationEstimate.swift */,
+				3CBDA7781F6E6BD000F96A46 /* SceneLocationEstimate+Extensions.swift */,
+				3CBDA7791F6E6BD000F96A46 /* FloatingPoint+Radians.swift */,
+				3CBDA77A1F6E6BD000F96A46 /* LocationNode.swift */,
+				3CBDA77B1F6E6BD000F96A46 /* CGPoint+Extensions.swift */,
+				3CBDA77C1F6E6BD000F96A46 /* CLLocation+Extensions.swift */,
+				3CBDA77D1F6E6BD000F96A46 /* SceneLocationView.swift */,
+				3CBDA77E1F6E6BD000F96A46 /* LocationManager.swift */,
+				3CBDA77F1F6E6BD000F96A46 /* SCNNode+Extensions.swift */,
+			);
+			path = "ARKit+CoreLocation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,11 +256,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CBDA7301F6DBC9A00F96A46 /* ViewController.swift in Sources */,
+				3CBDA7841F6E6BDA00F96A46 /* LocationNode.swift in Sources */,
+				3CBDA7301F6DBC9A00F96A46 /* MapViewController.swift in Sources */,
 				3CBDA7581F6E1B7800F96A46 /* ImageOCRResult.swift in Sources */,
+				3CBDA7861F6E6BDA00F96A46 /* CLLocation+Extensions.swift in Sources */,
+				3CBDA7881F6E6BDA00F96A46 /* LocationManager.swift in Sources */,
 				3CBDA72C1F6DBC9A00F96A46 /* AppDelegate.swift in Sources */,
 				9B3950B91F6E6BA600A3C013 /* FailedParkingViewController.swift in Sources */,
+				3CBDA7891F6E6BDA00F96A46 /* SCNNode+Extensions.swift in Sources */,
+				3CBDA7871F6E6BDA00F96A46 /* SceneLocationView.swift in Sources */,
+				3CBDA7851F6E6BDA00F96A46 /* CGPoint+Extensions.swift in Sources */,
+				3CBDA7821F6E6BDA00F96A46 /* SceneLocationEstimate+Extensions.swift in Sources */,
+				3CBDA7801F6E6BDA00F96A46 /* SCNVector3+Extensions.swift in Sources */,
+				3CBDA7741F6E65B700F96A46 /* CameraViewController+Demo.swift in Sources */,
+				3CBDA78B1F6E6C0500F96A46 /* ARNavigationViewController.swift in Sources */,
 				3CBDA7721F6E2F1100F96A46 /* ParkState.swift in Sources */,
+				3CBDA7831F6E6BDA00F96A46 /* FloatingPoint+Radians.swift in Sources */,
+				3CBDA7811F6E6BDA00F96A46 /* SceneLocationEstimate.swift in Sources */,
 				3CBDA7561F6E0CEF00F96A46 /* CameraViewController.swift in Sources */,
 				9B7E6BA41F6E3C560012A94E /* MainScreenViewController.swift in Sources */,
 				9B3950BB1F6E766D00A3C013 /* CurrentSessionViewController.swift in Sources */,
