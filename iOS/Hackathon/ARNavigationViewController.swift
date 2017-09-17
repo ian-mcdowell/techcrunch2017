@@ -18,6 +18,7 @@ class ARNavigationViewController: UIViewController, SceneLocationViewDelegate {
     var updateInfoLabelTimer: Timer?
     
     let mapVC: MapViewController
+    let doneButton = UIButton(type: .system)
     
     var pinNode: LocationAnnotationNode {
         didSet {
@@ -73,6 +74,21 @@ class ARNavigationViewController: UIViewController, SceneLocationViewDelegate {
             selector: #selector(updateInfoLabel),
             userInfo: nil,
             repeats: true)
+        
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        view.addSubview(doneButton)
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            doneButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            doneButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15)
+        ])
+    }
+    
+    @objc private func close() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.hasActiveSession = false
+        delegate.updateRootViewController()
     }
     
     override func viewDidLayoutSubviews() {

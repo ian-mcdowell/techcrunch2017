@@ -17,7 +17,12 @@ class FailedParkingViewController: UIViewController {
         warningSign.image = warningSign.image!.withRenderingMode(.alwaysTemplate)
         warningSign.tintColor = .red
 
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
         // Do any additional setup after loading the view.
+    }
+    
+    @objc private func close() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

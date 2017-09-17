@@ -32,6 +32,7 @@
 		9B0DC8261F6E15B4005AC5B5 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */; };
 		9B3950B91F6E6BA600A3C013 /* FailedParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */; };
 		9B3950BB1F6E766D00A3C013 /* CurrentSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */; };
+		9B3950BD1F6E7F4E00A3C013 /* SuccessParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950BC1F6E7F4E00A3C013 /* SuccessParkingViewController.swift */; };
 		9B7E6B9E1F6E383C0012A94E /* MapQuestMaps-3.2.1-1.3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B09430E1F6E151E00309317 /* MapQuestMaps-3.2.1-1.3 */; };
 		9B7E6BA21F6E38A70012A94E /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B7E6BA11F6E38A70012A94E /* Mapbox.bundle */; };
 		9B7E6BA41F6E3C560012A94E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */; };
@@ -90,6 +91,7 @@
 		9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "Hackathon/MapQuestMaps-3.2.1-1.3/Mapbox.framework"; sourceTree = "<group>"; };
 		9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedParkingViewController.swift; sourceTree = "<group>"; };
 		9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionViewController.swift; sourceTree = "<group>"; };
+		9B3950BC1F6E7F4E00A3C013 /* SuccessParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessParkingViewController.swift; sourceTree = "<group>"; };
 		9B7E6BA11F6E38A70012A94E /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = "Hackathon/MapQuestMaps-3.2.1-1.3/Mapbox.bundle"; sourceTree = "<group>"; };
 		9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		9B7E6BA51F6E3C860012A94E /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
@@ -138,8 +140,8 @@
 				3CBDA7751F6E6BD000F96A46 /* ARKit+CoreLocation */,
 				3CBDA72B1F6DBC9A00F96A46 /* AppDelegate.swift */,
 				9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */,
-				3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */,
 				9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */,
+				9B3950BC1F6E7F4E00A3C013 /* SuccessParkingViewController.swift */,
 				3CBDA72F1F6DBC9A00F96A46 /* MapViewController.swift */,
 				9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */,
 				3CBDA7361F6DBC9A00F96A46 /* LaunchScreen.storyboard */,
@@ -264,6 +266,7 @@
 				3CBDA72C1F6DBC9A00F96A46 /* AppDelegate.swift in Sources */,
 				9B3950B91F6E6BA600A3C013 /* FailedParkingViewController.swift in Sources */,
 				3CBDA7891F6E6BDA00F96A46 /* SCNNode+Extensions.swift in Sources */,
+				9B3950BD1F6E7F4E00A3C013 /* SuccessParkingViewController.swift in Sources */,
 				3CBDA7871F6E6BDA00F96A46 /* SceneLocationView.swift in Sources */,
 				3CBDA7851F6E6BDA00F96A46 /* CGPoint+Extensions.swift in Sources */,
 				3CBDA7821F6E6BDA00F96A46 /* SceneLocationEstimate+Extensions.swift in Sources */,

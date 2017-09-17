@@ -9,9 +9,15 @@
 import UIKit
 
 class CurrentSessionViewController: UIViewController {
+    
+    var timeRemaining: TimeInterval?
+    
 
+    @IBOutlet weak var timeRemainingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.timeRemainingLabel.text = "\(timeRemaining ?? 0)"
         
         let logoView = UIImageView(image: #imageLiteral(resourceName: "pr_logo"))
         logoView.contentMode = .scaleAspectFit
@@ -25,7 +31,20 @@ class CurrentSessionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func exitSession(_ sender: Any) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.hasActiveSession = false
+        delegate.updateRootViewController()
+    }
+    
+    
+    @IBAction func navigateToCar(_ sender: Any) {
+        
+        let app = UIApplication.shared.delegate as! AppDelegate
+        self.present(ARNavigationViewController(location: app.whereMyCarAtDoe), animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

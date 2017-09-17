@@ -61,43 +61,73 @@ class CameraViewController: UIViewController {
         return true
     }
     
-    var recognizing: Bool = false {
+    var recognizingTimer: Timer?
+    var recognizingEnabled: Bool = false {
         didSet {
-            if recognizing {
+            if recognizingEnabled {
                 recognize()
+                recognizingTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+                    self.recognize()
+                })
+            } else {
+                recognizingTimer?.invalidate()
+                recognizingTimer = nil
             }
         }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        recognizing = true
+        recognizingEnabled = true
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        recognizing = false
+        recognizingEnabled = false
     }
     
+    var isRecognizing: Bool = false
     func recognize() {
-        if !recognizing {
+        if !recognizingEnabled {
             return
         }
-        self.captureImage() { image in
-            self.tesseractOCR(image) { result in
+        if isRecognizing {
+            return
+        }
+        isRecognizing = true
+        self.captureImage() { [unowned self] image in
+            self.tesseractOCR(image) { [unowned self] result in
+                
+                self.isRecognizing = false
+                
                 if let state = try? ParkState.init(tesseractOCR: result) {
-                    self.recognizing = false
+                    self.recognizingEnabled = false
                     
                     DispatchQueue.main.async {
                         self.showViewController(forState: state)
                     }
-                } else {
-                    self.recognize()
                 }
             }
         }
     }
     
     func showViewController(forState state: ParkState) {
-        recognizing = false
+        recognizingEnabled = false
         
+        let storyboard = UIStoryboard(name: "main", bundle: nil)
+        
+        switch state {
+        case .goodToPark(let timeRemaining, let metadata):
+            let nav = storyboard.instantiateViewController(withIdentifier: "successParking") as! UINavigationController
+            let vc = nav.viewControllers.first as! SuccessParkingViewController
+            
+            vc.setParkingDuration(timeRemaining)
+            
+            self.present(nav, animated: true, completion: nil)
+        case .cantPark(let reason, let metadata):
+            let nav = storyboard.instantiateViewController(withIdentifier: "failedParking") as! UINavigationController
+            let vc = nav.viewControllers.first as! FailedParkingViewController
+            
+            self.present(nav, animated: true, completion: nil)
+        }
+        /*
         let alert = UIAlertController(
             title: "Result",
             message: String(describing: state),
@@ -106,6 +136,7 @@ class CameraViewController: UIViewController {
             self.view.isUserInteractionEnabled = true
         }))
         self.present(alert, animated: true)
+ */
     }
     
     func captureImage(_ callback: @escaping (Data) -> Void) {
@@ -113,7 +144,10 @@ class CameraViewController: UIViewController {
         videoConnection.videoOrientation = transformOrientation(orientation: UIApplication.shared.statusBarOrientation)
         
         output.captureStillImageAsynchronously(from: videoConnection) { buffer, error in
-            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer!)!
+            
+            guard let buffer = buffer, let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer) else {
+                return
+            }
             
             callback(imageData)
         }

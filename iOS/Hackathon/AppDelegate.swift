@@ -16,24 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var hasActiveSession: Bool = false
 
+    var whereMyCarAtDoe: CLLocation = CLLocation(latitude: 37.7756430, longitude: -122.3867430)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
- 
-        let storyboard = UIStoryboard(name: "main", bundle: nil)
-        
         
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.backgroundColor = UIColor.white
+            self.updateRootViewController()
+            window.makeKeyAndVisible()
+        }
+        return true
+    }
+    
+    func updateRootViewController() {
+        let storyboard = UIStoryboard(name: "main", bundle: nil)
+        if let window = window {
             if hasActiveSession{
                 window.rootViewController = storyboard.instantiateViewController(withIdentifier: "activeParking")
             } else {
                 window.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen")
             }
-            window.makeKeyAndVisible()
         }
-        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
