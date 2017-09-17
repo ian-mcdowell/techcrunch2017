@@ -15,8 +15,8 @@ extension CameraViewController {
         view.addSubview(rView)
         rView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            rView.widthAnchor.constraint(equalToConstant: 120),
-            rView.heightAnchor.constraint(equalToConstant: 250),
+            rView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            rView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
             rView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             rView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
@@ -25,8 +25,8 @@ extension CameraViewController {
         view.addSubview(lView)
         lView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            lView.widthAnchor.constraint(equalToConstant: 120),
-            lView.heightAnchor.constraint(equalToConstant: 250),
+            lView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            lView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3),
             lView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             lView.leftAnchor.constraint(equalTo: view.leftAnchor)
         ])
