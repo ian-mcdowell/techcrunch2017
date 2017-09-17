@@ -18,6 +18,8 @@
 		3CBDA76F1F6E269B00F96A46 /* tessdata in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CBDA7671F6E24CD00F96A46 /* tessdata */; };
 		3CBDA7721F6E2F1100F96A46 /* ParkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDA7711F6E2F1100F96A46 /* ParkState.swift */; };
 		9B0DC8261F6E15B4005AC5B5 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */; };
+		9B3950B91F6E6BA600A3C013 /* FailedParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */; };
+		9B3950BB1F6E766D00A3C013 /* CurrentSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */; };
 		9B7E6B9E1F6E383C0012A94E /* MapQuestMaps-3.2.1-1.3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B09430E1F6E151E00309317 /* MapQuestMaps-3.2.1-1.3 */; };
 		9B7E6BA21F6E38A70012A94E /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B7E6BA11F6E38A70012A94E /* Mapbox.bundle */; };
 		9B7E6BA41F6E3C560012A94E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */; };
@@ -62,6 +64,8 @@
 		3CBDA7711F6E2F1100F96A46 /* ParkState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkState.swift; sourceTree = "<group>"; };
 		9B09430E1F6E151E00309317 /* MapQuestMaps-3.2.1-1.3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "MapQuestMaps-3.2.1-1.3"; sourceTree = "<group>"; };
 		9B0DC8251F6E15B4005AC5B5 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "Hackathon/MapQuestMaps-3.2.1-1.3/Mapbox.framework"; sourceTree = "<group>"; };
+		9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedParkingViewController.swift; sourceTree = "<group>"; };
+		9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionViewController.swift; sourceTree = "<group>"; };
 		9B7E6BA11F6E38A70012A94E /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = "Hackathon/MapQuestMaps-3.2.1-1.3/Mapbox.bundle"; sourceTree = "<group>"; };
 		9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		9B7E6BA51F6E3C860012A94E /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
@@ -108,7 +112,9 @@
 				9B7E6BA71F6E467D0012A94E /* Assets.xcassets */,
 				9B09430E1F6E151E00309317 /* MapQuestMaps-3.2.1-1.3 */,
 				3CBDA72B1F6DBC9A00F96A46 /* AppDelegate.swift */,
+				9B3950B81F6E6BA600A3C013 /* FailedParkingViewController.swift */,
 				3CBDA72F1F6DBC9A00F96A46 /* ViewController.swift */,
+				9B3950BA1F6E766D00A3C013 /* CurrentSessionViewController.swift */,
 				9B7E6BA31F6E3C560012A94E /* MainScreenViewController.swift */,
 				3CBDA7361F6DBC9A00F96A46 /* LaunchScreen.storyboard */,
 				3CBDA7391F6DBC9A00F96A46 /* Info.plist */,
@@ -208,9 +214,11 @@
 				3CBDA7301F6DBC9A00F96A46 /* ViewController.swift in Sources */,
 				3CBDA7581F6E1B7800F96A46 /* ImageOCRResult.swift in Sources */,
 				3CBDA72C1F6DBC9A00F96A46 /* AppDelegate.swift in Sources */,
+				9B3950B91F6E6BA600A3C013 /* FailedParkingViewController.swift in Sources */,
 				3CBDA7721F6E2F1100F96A46 /* ParkState.swift in Sources */,
 				3CBDA7561F6E0CEF00F96A46 /* CameraViewController.swift in Sources */,
 				9B7E6BA41F6E3C560012A94E /* MainScreenViewController.swift in Sources */,
+				9B3950BB1F6E766D00A3C013 /* CurrentSessionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A8DZBD3K9C;
+				DEVELOPMENT_TEAM = 7XUP88MUC4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,7 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A8DZBD3K9C;
+				DEVELOPMENT_TEAM = 7XUP88MUC4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

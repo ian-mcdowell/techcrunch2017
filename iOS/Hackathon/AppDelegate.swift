@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var hasActiveSession: Bool = false
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -23,7 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.backgroundColor = UIColor.white
-            window.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen")
+            if hasActiveSession{
+                window.rootViewController = storyboard.instantiateViewController(withIdentifier: "activeParking")
+            } else {
+                window.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen")
+            }
             window.makeKeyAndVisible()
         }
         return true
