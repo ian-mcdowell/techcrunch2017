@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+ 
         let storyboard = UIStoryboard(name: "main", bundle: nil)
         
         
@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainScreen")
             window.makeKeyAndVisible()
         }
-        
         return true
     }
 
